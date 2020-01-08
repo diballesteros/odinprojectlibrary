@@ -11,16 +11,16 @@
     <div id="container"></div>
     <button id="show-form" class="new-book-button">NEW BOOK</button>
     <form id="new-book-form">
-        <label>Name:</label>
-        <input type="text" id="new-book-name" placeholder="Please enter the book's name...">
-        <label>Author:</label>
-        <input type="text" id="new-book-author" placeholder="Please enter the book's author...">
-        <label>Pages:</label>
-        <input type="number" id="new-book-pages" placeholder="Please enter how many pages the book has...">
-        <label>Description:</label>
+        <label for="new-book-name">Name: (*)</label>
+        <input type="text" id="new-book-name" placeholder="Please enter the book's name..." required>
+        <label for="new-book-author">Author: (*)</label>
+        <input type="text" id="new-book-author" placeholder="Please enter the book's author..." required>
+        <label for="new-book-pages">Pages: (*)</label>
+        <input type="number" id="new-book-pages" placeholder="Please enter how many pages the book has..." required>
+        <label for="new-book-description">Description:</label>
         <textarea id="new-book-description" placeholder="Please enter a description of the book..."></textarea>
         <div>
-            <button type="button" id="add-book">Add</button>
+            <button type="submit" form="show-form" id="add-book">Add</button>
             <button type="button" id="cancel-form">Cancel</button>
         </div>
         

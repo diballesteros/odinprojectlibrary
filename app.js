@@ -13,16 +13,18 @@ Book.prototype.toggleRead = function () {
 }
 
 function addBookToLibrary() {
-    const newName = document.getElementById("new-book-name").value;
-    const newAuthor = document.getElementById("new-book-author").value;
-    const newPages = document.getElementById("new-book-pages").value;
-    const newDescription = document.getElementById("new-book-description").value;
+    const newName = document.getElementById("new-book-name");
+    const newAuthor = document.getElementById("new-book-author");
+    const newPages = document.getElementById("new-book-pages");
+    const newDescription = document.getElementById("new-book-description");
 
-    const newBook = new Book(newName, newDescription, newPages, newAuthor);
+    if (!newName.validity.valueMissing && !newAuthor.validity.valueMissing && !newPages.validity.valueMissing) {
+        const newBook = new Book(newName.value, newDescription.value, newPages.value, newAuthor.value);
 
-    myLibrary.push(newBook);
-
-    render(myLibrary);
+        myLibrary.push(newBook);
+    
+        render(myLibrary);
+    }
 }
 
 function removeBookFromLibrary() {
